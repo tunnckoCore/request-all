@@ -1,0 +1,45 @@
+{
+  "name": "request-all",
+  "version": "0.0.0",
+  "description": "Performs a multiple requests and data from all pages are concatenated together and buffered until the last page of data has been retrieved. Use it as standalone module or as wrapper for simple-get - just pass simple-get.",
+  "repository": "tunnckoCore/request-all",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "precommit.silent": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "parse-link-header": "^0.4.1"
+  },
+  "devDependencies": {
+    "assertit": "^0.1.0",
+    "pre-commit": "*",
+    "simple-get": "^1.4.3"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "all",
+    "buf",
+    "buffer",
+    "concat",
+    "data",
+    "get",
+    "http",
+    "https",
+    "multi",
+    "multiple",
+    "perform",
+    "req",
+    "request",
+    "request-all",
+    "simple",
+    "simple-get",
+    "simple-get-all",
+    "simple-request"
+  ]
+}
