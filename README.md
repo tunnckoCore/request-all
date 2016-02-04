@@ -19,6 +19,43 @@ const requestAll = require('request-all')
 ```
 
 
+### [requestAll](index.js#L34)
+> Perform multiple requests until the last page of data has been retrieved.
+
+**Params**
+
+* `url` **{Function|String|Object}**: the `simple-get` function, url, or object    
+* `[opts]` **{Object}**: optional options, `url` and `opts` are merged if both are objects    
+* `<cb>` **{Function}**: callbackfunction, you can pass it as second argument    
+* `returns` **{Function}**: the `simple-get` function, only if given as first argument, `undefined` otherwise 
+
+**Example**
+
+```js
+const requestAll = require('request-all')
+requestAll('https://api.github.com/users/tunnckoCore/repos', (err, data) => {
+  if (err) return console.error(err)
+  console.log(data.length) // => 200+ repos
+})
+```
+
+
+### Usage as wrapper
+> If you pass `simple-get` to it or any request library that
+have `.concat` method, it just returns it and adds `.requestAll` method.
+
+**Example**
+
+```js
+const simpleGet = require('request-all')(require('simple-get'))
+
+simpleGet.requestAll('http://httpbin.org/ip', {json: false}, (err, buf) => {
+  if (err) return console.error(err)
+  console.log(buf.toString()) // => '{"origin": "33.125.89.244"}'
+})
+```
+
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/request-all/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
