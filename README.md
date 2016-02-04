@@ -56,6 +56,14 @@ simpleGet.requestAll('http://httpbin.org/ip', {json: false}, (err, buf) => {
 ```
 
 
+## Related libs
+* [github-base](https://github.com/jonschlinkert/github-base): Base methods for creating node.js apps that work with the GitHub API.
+* [gists](https://github.com/jonschlinkert/gists): Methods for working with the GitHub Gist API. Node.js/JavaScript
+* [simple-get](https://github.com/feross/simple-get): Simplest way to make http get requests. Supports HTTPS, redirects, gzip/deflate, streams in < 100 lines.
+* [simple-get-stream](https://github.com/tunnckocore/simple-get-stream): Simply wraps `simple-get` and his methods to return Response stream instead of Request stream.
+* [then-got](https://github.com/hybridables/then-got): Promisified `simple-get`.
+
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/request-all/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
