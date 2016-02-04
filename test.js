@@ -30,11 +30,23 @@ test('should throw TypeError `missing concat method` when used as wrapper', func
 
 test('should throw TypeError if request url not a string', function (done) {
   function fixture () {
-    requestAll(123)
+    requestAll({
+      url: 123
+    })
   }
 
   test.throws(fixture, TypeError)
   test.throws(fixture, /missing request url/)
+  done()
+})
+
+test('should throw TypeError if not a callback', function (done) {
+  function fixture () {
+    requestAll('http://httpbin.org/ip', 123)
+  }
+
+  test.throws(fixture, TypeError)
+  test.throws(fixture, /expect a callback/)
   done()
 })
 

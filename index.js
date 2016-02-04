@@ -25,17 +25,20 @@ module.exports = function requestAll (url, opts, cb) {
 function factory (simpleGet) {
   return function simpleRequestAll (url, opts, callback) {
     callback = typeof opts === 'function' ? opts : callback
-    opts = normalize(url, opts)
+    opts = normalize(url, opts, callback)
     requestAll(opts, simpleGet, callback)
   }
 }
 
-function normalize (url, opts) {
+function normalize (url, opts, callback) {
   url = typeof url === 'string' ? {url: url} : url
   opts = extend(url, opts)
 
   if (typeof opts.url !== 'string') {
     throw new TypeError('request-all: missing request url')
+  }
+  if (typeof callback !== 'function') {
+    throw new TypeError('request-all: expect a callback')
   }
 
   opts.url = normalizeUrl(opts.url)
