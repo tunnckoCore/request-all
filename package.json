@@ -17,7 +17,7 @@
   "devDependencies": {
     "assertit": "^0.1.0",
     "pre-commit": "*",
-    "simple-get": "^1.4.3"
+    "simple-get": "^2.0.0"
   },
   "files": [
     "index.js"
