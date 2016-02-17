@@ -64,11 +64,11 @@ test('should works as standalone module which requires `simple-get`', function (
 test('should works as wrapper for `simple-get` and adds `.requestAll` method', function (done) {
   var simpleGet = requestAll(require('simple-get'))
 
-  simpleGet.requestAll('https://api.github.com/users/tunnckoCore/repos', {
+  simpleGet.requestAll('https://api.github.com/users/jonschlinkert/repos', {
     headers: auth('fake-user123:fakeuser123')
   }, function (err, data) {
     test.ifError(err)
-    test.strictEqual(data.length >= 100, true, 'expect `tunnckoCore` to have more than 100 repos')
+    test.strictEqual(data.length >= 700, true, 'expect `jonschlinkert` to have more than 700 repos')
     done()
   })
 })

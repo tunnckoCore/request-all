@@ -115,7 +115,7 @@ function requestAll (opts, simpleGet, callback) {
     var links = parseLink(res.headers.link)
     if (links && links.next) {
       opts.url = links.next.url
-      return requestAll(opts, simpleGet, function (err, response, res) {
+      return requestAll(opts, simpleGet, function (err, res, response) {
         if (err) return callback(err)
         callback(null, data.concat(res), response)
       })
