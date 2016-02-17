@@ -106,7 +106,7 @@ function normalizeUrl (url) {
  */
 
 function requestAll (opts, simpleGet, callback) {
-  simpleGet.concat(opts, function (err, data, res) {
+  simpleGet.concat(opts, function (err, res, data) {
     if (err) return callback(err)
     data = opts.json === true ? tryParse(data) : data
     if (data instanceof Error) return callback(data)
@@ -114,7 +114,7 @@ function requestAll (opts, simpleGet, callback) {
     var links = parseLink(res.headers.link)
     if (links && links.next) {
       opts.url = links.next.url
-      return requestAll(opts, simpleGet, function (err, res, response) {
+      return requestAll(opts, simpleGet, function (err, response, res) {
         if (err) return callback(err)
         callback(null, data.concat(res), response)
       })
