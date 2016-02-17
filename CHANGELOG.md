@@ -1,12 +1,17 @@
 
 
-## 2.0.0 - 2016-02-17
+## 2.0.1 - 2016-02-17 (latest)
+- Release v2.0.1 / npm@v2.0.1
+- add ProTips section
+- use `try-require-please`
+
+## 2.0.0 - 2016-02-17 (latest)
 - Release v2.0.0 / npm@v2.0.0
 - release is tagged as `latest`, there also `latest-1` which will continue to accept `simple-get@1`
 - fixes based on `simple-get@2.0.0` changes, if you pass `simple-get@1.x` it would fail
 - update verb
 
-## 1.0.1 - 2016-02-17
+## 1.0.1 - 2016-02-17 (latest-1)
 - Release v1.0.1 / npm@v1.0.1
 - use verb, verb config
 - update badges, links, docs
