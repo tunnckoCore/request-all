@@ -24,13 +24,13 @@ var parseLink = require('parse-link-header')
  * })
  * ```
  *
- * @name  requestAll
  * @param  {Function|String|Object} `url` the `simple-get` function, url, or object
  * @param  {Object} `[opts]` optional options, `url` and `opts` are merged if both are objects
  * @param  {Function} `<cb>` callbackfunction, you can pass it as second argument
- * @return {Function} the `simple-get` function, only if given as first argument, `undefined` otherwise
+ * @return {Function} the [simple-get][simple-get] function, only if given as first argument, `undefined` otherwise
  * @api public
  */
+
 module.exports = function requestAll (url, opts, cb) {
   if (typeof url === 'function') {
     if (typeof url.concat !== 'function') {
@@ -52,13 +52,14 @@ function factory (simpleGet) {
 }
 
 /**
- * Normalize and validate arguments and options
+ * > Normalize and validate arguments and options
  *
  * @param  {String|Object} `url`
  * @param  {Object} `opts`
  * @param  {Function} `callback`
  * @return {Object}
  */
+
 function normalize (url, opts, callback) {
   url = typeof url === 'string' ? {url: url} : url
   opts = extend(url, opts)
@@ -81,11 +82,12 @@ function normalize (url, opts, callback) {
 }
 
 /**
- * Normalize URL query
+ * > Normalize URL query
  *
  * @param  {String} `url`
  * @return {String}
  */
+
 function normalizeUrl (url) {
   if (!url || /per_page=/.test(url)) return url
   /* istanbul ignore next */
@@ -96,12 +98,13 @@ function normalizeUrl (url) {
 }
 
 /**
- * Multiple request logic
+ * > Multiple request logic
  *
  * @param  {Object} `opts`
  * @param  {Function} `simpleGet`
  * @param  {Function} `callback`
  */
+
 function requestAll (opts, simpleGet, callback) {
   simpleGet.concat(opts, function (err, data, res) {
     if (err) return callback(err)
@@ -121,11 +124,12 @@ function requestAll (opts, simpleGet, callback) {
 }
 
 /**
- * Catch JSON parse errors
+ * > Catch JSON parse errors
  *
  * @param  {Buffer} `val`
  * @return {String|Array|Error}
  */
+
 function tryParse (val) {
   var res = null
   try {

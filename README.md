@@ -1,15 +1,13 @@
 # [request-all][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
 
-> Performs a multiple requests and data from all pages are concatenated together and buffered until the last page of data has been retrieved. Use it as standalone module or as wrapper for `simple-get`.
+> Performs a multiple requests and data from all pages are concatenated together and buffered until the last page of data has been retrieved. Use it as standalone module or as wrapper for simple-get - just pass simple-get.
 
 [![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
-
 
 ## Install
 ```
 npm i request-all --save
 ```
-
 
 ## Usage
 > For more use-cases see the [tests](./test.js)
@@ -17,7 +15,6 @@ npm i request-all --save
 ```js
 const requestAll = require('request-all')
 ```
-
 
 ### [requestAll](index.js#L34)
 > Perform multiple requests until the last page of data has been retrieved.
@@ -27,7 +24,7 @@ const requestAll = require('request-all')
 * `url` **{Function|String|Object}**: the `simple-get` function, url, or object    
 * `[opts]` **{Object}**: optional options, `url` and `opts` are merged if both are objects    
 * `<cb>` **{Function}**: callbackfunction, you can pass it as second argument    
-* `returns` **{Function}**: the `simple-get` function, only if given as first argument, `undefined` otherwise 
+* `returns` **{Function}**: the [simple-get][simple-get] function, only if given as first argument, `undefined` otherwise  
 
 **Example**
 
@@ -39,9 +36,8 @@ requestAll('https://api.github.com/users/tunnckoCore/repos', (err, data) => {
 })
 ```
 
-
 ### Usage as wrapper
-> If you pass `simple-get` to it or any request library that
+> If you pass [simple-get][simple-get] to it or any request library that
 have `.concat` method, it just returns it and adds `.requestAll` method.
 
 **Example**
@@ -55,24 +51,21 @@ simpleGet.requestAll('http://httpbin.org/ip', {json: false}, (err, buf) => {
 })
 ```
 
-
-## Related libs
-* [github-base](https://github.com/jonschlinkert/github-base): Base methods for creating node.js apps that work with the GitHub API.
-* [gists](https://github.com/jonschlinkert/gists): Methods for working with the GitHub Gist API. Node.js/JavaScript
-* [simple-get](https://github.com/feross/simple-get): Simplest way to make http get requests. Supports HTTPS, redirects, gzip/deflate, streams in < 100 lines.
-* [simple-get-stream](https://github.com/tunnckocore/simple-get-stream): Simply wraps `simple-get` and his methods to return Response stream instead of Request stream.
-* [then-got](https://github.com/hybridables/then-got): Promisified `simple-get`.
-
+## Related
+* [github-base](https://www.npmjs.com/package/github-base): Base methods for creating node.js apps that work with the GitHub… [more](https://www.npmjs.com/package/github-base) | [homepage](https://github.com/jonschlinkert/github-base)
+* [simple-get](https://www.npmjs.com/package/simple-get): Simplest way to make http get requests. Supports HTTPS, redirects, gzip/deflate,… [more](https://www.npmjs.com/package/simple-get) | [homepage](https://github.com/feross/simple-get)
+* [simple-get-stream](https://www.npmjs.com/package/simple-get-stream): Simply wraps `simple-get` and his methods to return Response stream instead… [more](https://www.npmjs.com/package/simple-get-stream) | [homepage](https://github.com/tunnckocore/simple-get-stream)
+* [then-got](https://www.npmjs.com/package/then-got): Promisified `simple-get`. | [homepage](https://github.com/hybridables/then-got)
 
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/request-all/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
 
-
 ## [Charlike Make Reagent](http://j.mp/1stW47C) [![new message to charlike][new-message-img]][new-message-url] [![freenode #charlike][freenode-img]][freenode-url]
 
-[![tunnckocore.tk][author-www-img]][author-www-url] [![keybase tunnckocore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
+[![tunnckoCore.tk][author-www-img]][author-www-url] [![keybase tunnckoCore][keybase-img]][keybase-url] [![tunnckoCore npm][author-npm-img]][author-npm-url] [![tunnckoCore twitter][author-twitter-img]][author-twitter-url] [![tunnckoCore github][author-github-img]][author-github-url]
 
+[simple-get]: https://github.com/feross/simple-get
 
 [npmjs-url]: https://www.npmjs.com/package/request-all
 [npmjs-img]: https://img.shields.io/npm/v/request-all.svg?label=request-all
@@ -80,12 +73,11 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [license-url]: https://github.com/tunnckoCore/request-all/blob/master/LICENSE
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
 
-
 [codeclimate-url]: https://codeclimate.com/github/tunnckoCore/request-all
 [codeclimate-img]: https://img.shields.io/codeclimate/github/tunnckoCore/request-all.svg
 
 [travis-url]: https://travis-ci.org/tunnckoCore/request-all
-[travis-img]: https://img.shields.io/travis/tunnckoCore/request-all.svg
+[travis-img]: https://img.shields.io/travis/tunnckoCore/request-all/master.svg
 
 [coveralls-url]: https://coveralls.io/r/tunnckoCore/request-all
 [coveralls-img]: https://img.shields.io/coveralls/tunnckoCore/request-all.svg
@@ -95,7 +87,6 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 
 [standard-url]: https://github.com/feross/standard
 [standard-img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-
 
 [author-www-url]: http://www.tunnckocore.tk
 [author-www-img]: https://img.shields.io/badge/www-tunnckocore.tk-fe7d37.svg

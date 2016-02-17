@@ -17,7 +17,7 @@
   "devDependencies": {
     "assertit": "^0.1.0",
     "pre-commit": "*",
-    "simple-get": "^2.0.0"
+    "simple-get": "^1.4.3"
   },
   "files": [
     "index.js"
@@ -41,5 +41,23 @@
     "simple-get",
     "simple-get-all",
     "simple-request"
-  ]
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "simple-get-stream",
+        "simple-get",
+        "then-got",
+        "github-base"
+      ]
+    },
+    "reflinks": [
+      "simple-get"
+    ]
+  }
 }
