@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "extend-shallow": "^2.0.1",
-    "parse-link-header": "^0.4.1"
+    "parse-link-header": "^0.4.1",
+    "try-require-please": "^1.0.0"
   },
   "devDependencies": {
     "assertit": "^0.1.0",

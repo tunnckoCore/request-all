@@ -9,6 +9,7 @@
 
 var extend = require('extend-shallow')
 var parseLink = require('parse-link-header')
+var tryRequire = require('try-require-please')
 
 /**
  * > Perform multiple requests until the last
@@ -40,7 +41,7 @@ module.exports = function requestAll (url, opts, cb) {
     return url
   }
 
-  factory(require('simple-get'))(url, opts, cb)
+  factory(tryRequire('simple-get', 'request-all'))(url, opts, cb)
 }
 
 function factory (simpleGet) {
